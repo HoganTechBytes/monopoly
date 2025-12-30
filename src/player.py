@@ -42,9 +42,23 @@ class Player:
             print(f"{self.name} collected $200 for passing Go!")
 
     def pay(self, amount: int, recipient = None):
+        '''
+            Pay money to the bank or another player.
+
+            Args:
+                amount (int): Amount of money to deduct.
+                recipient (Player, optional): Player to receive the money. Defaults to None (bank).
+        '''
         self.money -= amount
         if recipient:
             recipient.money += amount
 
     def receive(self, amount: int):
+        '''
+            Receive money from the bank or another player.
+
+            Args:
+                amount (int): Amount of money to add.
+        '''
         self.money += amount
+        
