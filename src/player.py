@@ -1,7 +1,23 @@
+'''
+    Player model for the Monopoly game.
+
+    Defines the Player class and behavior for movement, money handling,
+    and property ownership
+'''
 from dataclasses import dataclass, field
 
 @dataclass
-class PLayer:
+class Player:
+    '''
+        Represents a player for the Monopoly game
+
+        Attributes:
+            name (str): Displays player's name
+            money (int): Current cash balance (default: 1500)
+            position (int): Current board index (0-39)
+            in_jail (bool): Jail status (default: False)
+            properties (list): List of spaces owned by the player (default: empty list)
+    '''
     name: str
     money: int = 1500
     position: int = 0
@@ -9,6 +25,13 @@ class PLayer:
     properties: list = field(default_factory = list)
 
     def move(self, steps: int):
+        '''
+            Move the Player forward by the given number of spaces.
+            Handles passing 'Go' and collecting $200.
+
+            Args:
+                steps (int): Number of spaces to move forward.
+        '''
         old_position = self.position
         self.position = (self.position + steps) % 40
 

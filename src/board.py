@@ -6,10 +6,9 @@ Board definitions and setup utilities for a Monopoly-like game.
 from space import Space, SpaceType
 def create_board():
     '''
-    Create and return the game board
+    Create and return the full Monopoly game board.
 
-    Currently returns a partial board suitable for early development.
-    The list index corresponds to the position on the board.
+    The list index corresponds to the position on the board (0-39).
 
     Returns:
         List[Space]: A list of Space objects representing the game board.
