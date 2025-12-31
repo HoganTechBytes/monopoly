@@ -3,7 +3,7 @@ Board definitions and setup utilities for a Monopoly-like game.
 
 '''
 
-from space import Space, SpaceType
+from space import Space, SpaceType, PropertySpace
 def create_board():
     '''
     Create and return the full Monopoly game board.
@@ -16,11 +16,28 @@ def create_board():
 
     return [
         Space (position=0, name="GO", type=SpaceType.GO),
-        Space (position=1, name="Mediterranean Avenue", type=SpaceType.PROPERTY),
+        PropertySpace (
+            position=1,
+            name = "Mediterranean Avenue",
+            type = SpaceType.PROPERTY,
+            cost = 60,
+            base_rent = 2
+            ),
         Space (position=2, name="Community Chest", type=SpaceType.COMMUNITY_CHEST),
-        Space (position=3, name="Baltic Avenue", type=SpaceType.PROPERTY),
+        PropertySpace (
+            position = 3,
+            name = "Baltic Avenue",
+            type = SpaceType.PROPERTY,
+            cost = 60,
+            base_rent = 4
+            ),
         Space (position=4, name="Income Tax", type=SpaceType.TAX),
-        Space (position=5, name="Reading Railroad", type=SpaceType.RAILROAD),
+        PropertySpace (
+            position = 5,
+            name = "Reading Railroad",
+            type = SpaceType.RAILROAD,
+            cost = 200,
+            base_rent = 25),
         Space (position=6, name="Oriental Avenue", type=SpaceType.PROPERTY),
         Space (position=7, name="Chance", type=SpaceType.CHANCE),
         Space (position=8, name="Vermont Avenue", type=SpaceType.PROPERTY),
