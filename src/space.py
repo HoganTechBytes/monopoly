@@ -1,5 +1,5 @@
 '''
-Board spaces and space tyoes for a Monopoly-like game.
+Board spaces and space types for a Monopoly-like game.
 
 This module defines the types of spaces that can exist on the board
 and the base Space data model used to represent them.
@@ -23,7 +23,7 @@ class SpaceType(Enum):
     UTILITY = auto()
     TAX = auto()
     CHANCE = auto()
-    COMUNITY_CHEST = auto()
+    COMMUNITY_CHEST = auto()
     JAIL = auto()
     GO_TO_JAIL = auto()
     FREE_PARKING = auto()
