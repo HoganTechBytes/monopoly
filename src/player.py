@@ -5,60 +5,44 @@
     and property ownership
 '''
 from dataclasses import dataclass, field
+from typing import List, Optional
+
+from space import PropertySpace
+
 
 @dataclass
 class Player:
     '''
-        Represents a player for the Monopoly game
-
-        Attributes:
-            name (str): Displays player's name
-            money (int): Current cash balance (default: 1500)
-            position (int): Current board index (0-39)
-            in_jail (bool): Jail status (default: False)
-            properties (list): List of spaces owned by the player (default: empty list)
+    Represents a Monopoly player.
     '''
     name: str
     money: int = 1500
     position: int = 0
     in_jail: bool = False
-    properties: list = field(default_factory = list)
+    properties: List[PropertySpace] = field(default_factory=list)
 
-    def move(self, steps: int):
+    def move(self, steps: int) -> None:
         '''
-            Move the Player forward by the given number of spaces.
-            Handles passing 'Go' and collecting $200.
-
-            Args:
-                steps (int): Number of spaces to move forward.
+        Move the player clockwise around the board.
+        Awards $200 for passing GO.
         '''
         old_position = self.position
         self.position = (self.position + steps) % 40
-
-        # Passed 'Go' logic
         if self.position < old_position:
-            # Collect $200 for passing Go
+            print(f'{self.name} passed GO and collects $200.')
             self.money += 200
-            print(f"{self.name} collected $200 for passing Go!")
 
-    def pay(self, amount: int, recipient = None):
+    def pay(self, amount: int, recipient: Optional["Player"] = None) -> None:
         '''
-            Pay money to the bank or another player.
-
-            Args:
-                amount (int): Amount of money to deduct.
-                recipient (Player, optional): Player to receive the money. Defaults to None (bank).
+        Pay an amount to the bank or another player.
+        (Bankruptcy rules not yet implemented.)
         '''
         self.money -= amount
-        if recipient:
+        if recipient is not None:
             recipient.money += amount
 
-    def receive(self, amount: int):
+    def receive(self, amount: int) -> None:
         '''
-            Receive money from the bank or another player.
-
-            Args:
-                amount (int): Amount of money to add.
+        Receive money from the bank.
         '''
         self.money += amount
-        

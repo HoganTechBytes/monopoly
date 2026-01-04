@@ -12,7 +12,7 @@ def create_board():
     The list index corresponds to the position on the board (0-39).
 
     Returns:
-        List[Space]: A list of Space / PropertySpace objects
+        list[Space]: A list of Space / PropertySpace objects
         representing the game board.
     '''
     return [
@@ -21,7 +21,7 @@ def create_board():
             position = 0,
             name = "GO",
             type = SpaceType.GO
-            ),
+        ),
 
         # Brown
         PropertySpace(
@@ -35,7 +35,7 @@ def create_board():
             position = 2,
             name = "Community Chest",
             type = SpaceType.COMMUNITY_CHEST
-            ),
+        ),
         PropertySpace(
             position = 3,
             name = "Baltic Avenue",
@@ -47,9 +47,9 @@ def create_board():
             position = 4,
             name = "Income Tax",
             type = SpaceType.TAX
-            ),
+        ),
 
-        # Railroads
+        # Railroad
         PropertySpace(
             position = 5,
             name = "Reading Railroad",
@@ -70,7 +70,7 @@ def create_board():
             position = 7,
             name = "Chance",
             type = SpaceType.CHANCE
-            ),
+        ),
         PropertySpace(
             position = 8,
             name = "Vermont Avenue",
@@ -90,7 +90,7 @@ def create_board():
             position = 10,
             name = "Jail / Just Visiting",
             type = SpaceType.JAIL
-            ),
+        ),
 
         # Pink
         PropertySpace(
@@ -104,7 +104,7 @@ def create_board():
             position = 12,
             name = "Electric Company",
             type = SpaceType.UTILITY
-            ),
+        ),
         PropertySpace(
             position = 13,
             name = "States Avenue",
@@ -140,7 +140,8 @@ def create_board():
         Space(
             position = 17,
             name = "Community Chest",
-            type = SpaceType.COMMUNITY_CHEST),
+            type = SpaceType.COMMUNITY_CHEST
+        ),
         PropertySpace(
             position = 18,
             name = "Tennessee Avenue",
@@ -160,7 +161,7 @@ def create_board():
             position = 20,
             name = "Free Parking",
             type = SpaceType.FREE_PARKING
-            ),
+        ),
 
         # Red
         PropertySpace(
@@ -174,7 +175,7 @@ def create_board():
             position = 22,
             name = "Chance",
             type = SpaceType.CHANCE
-            ),
+        ),
         PropertySpace(
             position = 23,
             name = "Indiana Avenue",
@@ -218,7 +219,7 @@ def create_board():
             position = 28,
             name = "Water Works",
             type = SpaceType.UTILITY
-            ),
+        ),
         PropertySpace(
             position = 29,
             name = "Marvin Gardens",
@@ -231,7 +232,7 @@ def create_board():
             position = 30,
             name = "Go To Jail",
             type = SpaceType.GO_TO_JAIL
-            ),
+        ),
 
         # Green
         PropertySpace(
@@ -252,7 +253,7 @@ def create_board():
             position = 33,
             name = "Community Chest",
             type = SpaceType.COMMUNITY_CHEST
-            ),
+        ),
         PropertySpace(
             position = 34,
             name = "Pennsylvania Avenue",
@@ -274,7 +275,7 @@ def create_board():
             position = 36,
             name = "Chance",
             type = SpaceType.CHANCE
-            ),
+        ),
 
         # Dark Blue
         PropertySpace(
@@ -288,7 +289,7 @@ def create_board():
             position = 38,
             name = "Luxury Tax",
             type = SpaceType.TAX
-            ),
+        ),
         PropertySpace(
             position = 39,
             name = "Boardwalk",

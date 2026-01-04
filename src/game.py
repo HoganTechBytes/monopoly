@@ -3,17 +3,20 @@
 '''
 
 import random
+from typing import Tuple
 
-def roll_dice():
-    '''
-        Roll two six-sided dice.
 
-        Returns:
-            total (int): Sum of both dice.
-            doubles (bool): True if both dice show the same number.
-            dice (tuple): The raw die results (d1, d2).
+def roll_dice() -> Tuple[int, bool, Tuple[int, int]]:
     '''
-    d1 = random.randint (1,6)
-    d2 = random.randint(1,6)
+    Roll two six-sided dice.
+
+    Returns:
+        total: sum of the two dice
+        doubles: True if both dice show the same value
+        dice: (die1, die2)
+    '''
+    d1 = random.randint(1, 6)
+    d2 = random.randint(1, 6)
+    total = d1 + d2
     doubles = d1 == d2
-    return d1 + d2, doubles, (d1, d2)
+    return total, doubles, (d1, d2)
